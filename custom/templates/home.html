@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}{{Tr(Lang, "name")}} - {{Tr(Lang, "tag_line")}}{% endblock %}
+{% block body %}
+	<div class="ui inverted vertical masthead center aligned segment">
+	  {% include Page.NavbarTplPath %}
+
+	  <div class="ui text container">
+	    <img src="/img/favicon.ico" >
+	    <h2 class="ui inverted header">
+	      {{Tr(Lang, "home.title")}}
+	    </h2>
+	    <h3>{{Tr(Lang, "home.tag_line")}}</h3>
+	     <form action="/search">
+          <div class="item">
+            <div class="ui fluid action input">
+              <input name="q" value="{{Keyword}}" placeholder="{{Tr(Lang, "navbar.search")}}...">
+			  <div class="ui button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size= 4 color="#ffffff">{{Tr(Lang, "navbar.search")}}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </div>
+          </div
+        </form>
+	  </div>
+	</div>
+
+	<div class="ui vertical stripe segment">
+	  <div class="ui aligned stackable three column grid container">
+	    <div class="column">
+	      <h3 class="ui header">
+	      	<img src="/img/1.png" > <a href="/docs/characteristic/faster"><font color="#212121">{{Tr(Lang, "home.multi_lang")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.multi_lang_desc")}}</p>
+	    </div>
+	    <div class="column">
+	      <h3 class="ui header">
+			<img src="/img/2.png" > <a href="/docs/characteristic/full"><font color="#212121">{{Tr(Lang, "home.real_time")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.real_time_desc")}}</p>
+	    </div>
+	    <div class="column">
+	      <h3 class="ui header">
+			<img src="/img/3.png" > <a href="/docs/characteristic/updating"><font color="#212121">{{Tr(Lang, "home.searchable")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.searchable_desc")}}</p>
+	    </div>
+	  </div>
+	</div>
+
+		<div class="ui vertical stripe segment">
+	  <div class="ui aligned stackable three column grid container">
+	    <div class="column">
+	      <h3 class="ui header">
+			  <img src="/img/4.png" > <a href="/docs/characteristic/multi-language"><font color="#212121">{{Tr(Lang, "home.markdown")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.markdown_desc")}}</p>
+	    </div>
+	    <div class="column">
+	      <h3 class="ui header">
+			  <img src="/img/5.png" > <a href="/docs/characteristic/multi-version"><font color="#212121">{{Tr(Lang, "home.webhook")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.webhook_desc")}}</p>
+	    </div>
+	    <div class="column">
+	      <h3 class="ui header">
+		  <img src="/img/6.png" > <a href="/docs/characteristic/opensource"><font color="#212121">{{Tr(Lang, "home.configurable")}}</font></a>
+	      </h3>
+	      <p>{{Tr(Lang, "home.configurable_desc")}}</p>
+	    </div>
+	  </div>
+	</div>
+
+	
+
+	{% include Page.FooterTplPath %}
+{% endblock %}
