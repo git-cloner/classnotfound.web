@@ -10,11 +10,11 @@
 	      {{Tr(Lang, "home.title")}}
 	    </h2>
 	    <h3>{{Tr(Lang, "home.tag_line")}}</h3>
-	     <form action="/search">
+	     <form action="/search" method="post" action="" onsubmit="return false;">
           <div class="item">
             <div class="ui fluid action input">
-              <input name="q" value="{{Keyword}}" placeholder="{{Tr(Lang, "navbar.search")}}...">
-			  <div class="ui button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size= 4 color="#ffffff">{{Tr(Lang, "navbar.search")}}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <input name="q" id="q" value="{{Keyword}}" placeholder="jar or class:fastjosn,org.springframework.stereotype.Service...">
+			  			<div class="ui button" onclick="search()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size= 4 color="#ffffff">{{Tr(Lang, "navbar.search")}}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             </div>
           </div
         </form>
@@ -25,19 +25,19 @@
 	  <div class="ui aligned stackable three column grid container">
 	    <div class="column">
 	      <h3 class="ui header">
-	      	<img src="/img/1.png" > <a href="/docs/characteristic/faster"><font color="#212121">{{Tr(Lang, "home.multi_lang")}}</font></a>
+	      	<img src="/img/1.png" > <a href="/docs/feature/faster"><font color="#212121">{{Tr(Lang, "home.multi_lang")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.multi_lang_desc")}}</p>
 	    </div>
 	    <div class="column">
 	      <h3 class="ui header">
-			<img src="/img/2.png" > <a href="/docs/characteristic/full"><font color="#212121">{{Tr(Lang, "home.real_time")}}</font></a>
+			<img src="/img/2.png" > <a href="/docs/feature/full"><font color="#212121">{{Tr(Lang, "home.real_time")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.real_time_desc")}}</p>
 	    </div>
 	    <div class="column">
 	      <h3 class="ui header">
-			<img src="/img/3.png" > <a href="/docs/characteristic/updating"><font color="#212121">{{Tr(Lang, "home.searchable")}}</font></a>
+			<img src="/img/3.png" > <a href="/docs/feature/updating"><font color="#212121">{{Tr(Lang, "home.searchable")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.searchable_desc")}}</p>
 	    </div>
@@ -48,26 +48,47 @@
 	  <div class="ui aligned stackable three column grid container">
 	    <div class="column">
 	      <h3 class="ui header">
-			  <img src="/img/4.png" > <a href="/docs/characteristic/multi-language"><font color="#212121">{{Tr(Lang, "home.markdown")}}</font></a>
+			  <img src="/img/4.png" > <a href="/docs/feature/multi-language"><font color="#212121">{{Tr(Lang, "home.markdown")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.markdown_desc")}}</p>
 	    </div>
 	    <div class="column">
 	      <h3 class="ui header">
-			  <img src="/img/5.png" > <a href="/docs/characteristic/multi-version"><font color="#212121">{{Tr(Lang, "home.webhook")}}</font></a>
+			  <img src="/img/5.png" > <a href="/docs/feature/multi-version"><font color="#212121">{{Tr(Lang, "home.webhook")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.webhook_desc")}}</p>
 	    </div>
 	    <div class="column">
 	      <h3 class="ui header">
-		  <img src="/img/6.png" > <a href="/docs/characteristic/opensource"><font color="#212121">{{Tr(Lang, "home.configurable")}}</font></a>
+		  <img src="/img/6.png" > <a href="/docs/feature/opensource"><font color="#212121">{{Tr(Lang, "home.configurable")}}</font></a>
 	      </h3>
 	      <p>{{Tr(Lang, "home.configurable_desc")}}</p>
 	    </div>
 	  </div>
 	</div>
 
-	
+	<script>
+		window.onload = function () {
+			document.getElementById("q").focus();
+		};
 
+		function search(){
+		  var searchstr = document.getElementById("q").value;
+		  if (searchstr.length <= 0){
+		    searchstr = "org.springframework.stereotype.Service" ; 
+		   }
+		   window.location.href = "https://classnotfound.com.cn/home/?className=" + searchstr + "&currentPage=1&pageSize=10" ; 
+		} ;
+
+		document.onkeydown = function(e) {
+      var e = e || event;
+      if(e.keyCode == 13) {
+　 　 		setTimeout(function(){
+            search() ;
+        },0);
+        e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+		  }
+	  }
+	</script>
 	{% include Page.FooterTplPath %}
 {% endblock %}
