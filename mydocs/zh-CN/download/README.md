@@ -8,7 +8,7 @@ name: 下载
 | :--: | -------- | ------------------------------------------------------------ |
 |  18  | linux    | https://gitclone.com/download1/jdk/jdk18/jdk-18_linux-x64_bin.tar.gz |
 |      | windows  | https://gitclone.com/download1/jdk/jdk18/jdk-18_windows-x64_bin.msi |
-|      | linux    | https://gitclone.com/download1/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz |
+|  17  | linux    | https://gitclone.com/download1/jdk/jdk17/jdk-17_linux-x64_bin.tar.gz |
 |      | windows  | https://gitclone.com/download1/jdk/jdk17/jdk-17_windows-x64_bin.msi |
 |  11  | linux    | https://gitclone.com/download1/jdk/jdk11/jdk-11.0.14_linux-x64_bin.tar.gz |
 |      | windows  | https://gitclone.com/download1/jdk/jdk11/jdk-11.0.14_windows-x64_bin.exe |
